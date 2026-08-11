@@ -1,35 +1,71 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0b0c0d" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="application-name" content="TOLVANO" />
+  <meta name="language" content="en" />
   <meta name="description" content="TOLVANO connects qualified commercial opportunities with capable suppliers through focused sourcing, supplier fit and direct B2B introductions." />
   <meta property="og:title" content="TOLVANO — Qualified Demand. Capable Supply." />
   <meta property="og:description" content="Focused B2B sourcing, commercial introductions and opportunity alignment for serious suppliers and buyers." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tolvano.com/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="ar_AR" />
   <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="TOLVANO — Qualified Demand. Capable Supply." />
+  <meta name="twitter:description" content="Focused B2B sourcing, commercial introductions and opportunity alignment for serious suppliers and buyers." />
+  <link rel="canonical" href="https://tolvano.com/" />
+  <link rel="alternate" hreflang="en" href="https://tolvano.com/?lang=en" />
+  <link rel="alternate" hreflang="ar" href="https://tolvano.com/?lang=ar" />
+  <link rel="alternate" hreflang="x-default" href="https://tolvano.com/" />
   <title>TOLVANO — Qualified Demand. Capable Supply.</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <script>
+    (function () {
+      try {
+        const requestedLanguage = new URLSearchParams(window.location.search).get('lang');
+        const savedLanguage = window.localStorage.getItem('tolvano-language');
+        const language = requestedLanguage === 'ar' || requestedLanguage === 'en'
+          ? requestedLanguage
+          : (savedLanguage === 'ar' || savedLanguage === 'en' ? savedLanguage : 'en');
+        const root = document.documentElement;
+        root.lang = language;
+        root.dir = language === 'ar' ? 'rtl' : 'ltr';
+        root.dataset.language = language;
+      } catch (error) {
+        // English remains the reliable default when storage or URL APIs are unavailable.
+      }
+    }());
+  </script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
   <div class="cursor-glow" aria-hidden="true"></div>
+  <p class="sr-only" id="language-status" aria-live="polite"></p>
 
   <header class="site-header" id="top">
-    <a class="brand" href="#top" aria-label="TOLVANO home">
+    <a class="brand" href="#top" aria-label="TOLVANO home" data-i18n-aria-label="brand.home">
       <span class="brand-mark" aria-hidden="true"><span></span><span></span></span>
       <span class="brand-word">TOLVANO</span>
     </a>
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="#capabilities">Capabilities</a>
-      <a href="#approach">Approach</a>
-      <a href="#focus">Focus</a>
+    <nav class="nav" id="primary-navigation" aria-label="Primary navigation" data-i18n-aria-label="navigation.primary">
+      <a href="#capabilities" data-i18n="navigation.capabilities">Capabilities</a>
+      <a href="#approach" data-i18n="navigation.approach">Approach</a>
+      <a href="#focus" data-i18n="navigation.focus">Focus</a>
     </nav>
-    <a class="header-cta" href="mailto:hasan@tolvano.com?subject=Commercial%20Discussion%20with%20TOLVANO">Start a discussion</a>
-    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    <div class="header-actions">
+      <div class="language-switcher" role="group" aria-label="Language selector" data-i18n-aria-label="language.selector">
+        <button class="language-option" type="button" data-language-option="en" aria-pressed="true" lang="en">EN</button>
+        <span class="language-divider" aria-hidden="true">|</span>
+        <button class="language-option" type="button" data-language-option="ar" aria-pressed="false" lang="ar">AR</button>
+      </div>
+      <a class="header-cta" href="mailto:hasan@tolvano.com?subject=Commercial%20Discussion%20with%20TOLVANO" data-i18n-mailto="emailSubjects.header" data-mailto-email="hasan@tolvano.com"><span data-i18n="navigation.contact">Start a discussion</span></a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation" data-menu-toggle><span></span><span></span></button>
+    </div>
   </header>
 
   <main>
@@ -38,24 +74,24 @@
       <div class="hero-orbit orbit-one" aria-hidden="true"></div>
       <div class="hero-orbit orbit-two" aria-hidden="true"></div>
       <div class="hero-copy reveal">
-        <p class="eyebrow"><span class="signal"></span> B2B COMMERCIAL OPPORTUNITY PARTNER</p>
-        <h1>Qualified demand.<br /><span>Capable supply.</span><br />One decisive connection.</h1>
-        <p class="hero-lead">TOLVANO helps serious suppliers and buyers move from market noise to commercial relevance — through focused sourcing, supplier fit and direct opportunity alignment.</p>
+        <p class="eyebrow"><span class="signal" aria-hidden="true"></span><span data-i18n="hero.eyebrow">B2B COMMERCIAL OPPORTUNITY PARTNER</span></p>
+        <h1 data-i18n-html="hero.title">Qualified demand.<br /><span>Capable supply.</span><br />One decisive connection.</h1>
+        <p class="hero-lead" data-i18n="hero.lead">TOLVANO helps serious suppliers and buyers move from market noise to commercial relevance — through focused sourcing, supplier fit and direct opportunity alignment.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="mailto:hasan@tolvano.com?subject=Commercial%20Opportunity%20with%20TOLVANO">
-            Discuss an opportunity
+          <a class="btn btn-primary" href="mailto:hasan@tolvano.com?subject=Commercial%20Opportunity%20with%20TOLVANO" data-i18n-mailto="emailSubjects.opportunity" data-mailto-email="hasan@tolvano.com">
+            <span data-i18n="hero.primaryCta">Discuss an opportunity</span>
             <span aria-hidden="true">↗</span>
           </a>
-          <a class="btn btn-ghost" href="#capabilities">Explore TOLVANO <span aria-hidden="true">↓</span></a>
+          <a class="btn btn-ghost" href="#capabilities"><span data-i18n="hero.secondaryCta">Explore TOLVANO</span> <span aria-hidden="true">↓</span></a>
         </div>
-        <div class="trust-line" aria-label="TOLVANO principles">
-          <span>Opportunity-led</span><i></i><span>Supplier-fit focused</span><i></i><span>Commercially direct</span>
+        <div class="trust-line" aria-label="TOLVANO principles" data-i18n-aria-label="hero.principles">
+          <span data-i18n="hero.principleOne">Opportunity-led</span><i aria-hidden="true"></i><span data-i18n="hero.principleTwo">Supplier-fit focused</span><i aria-hidden="true"></i><span data-i18n="hero.principleThree">Commercially direct</span>
         </div>
       </div>
 
       <div class="hero-visual reveal delay-one" aria-hidden="true">
         <div class="visual-frame">
-          <div class="frame-label top"><span>TOLVANO / SIGNAL</span><span>LIVE</span></div>
+          <div class="frame-label top"><span data-i18n="visual.signal">TOLVANO / SIGNAL</span><span data-i18n="visual.live">LIVE</span></div>
           <div class="sphere">
             <div class="sphere-ring ring-a"></div>
             <div class="sphere-ring ring-b"></div>
@@ -64,50 +100,50 @@
           </div>
           <div class="connection-line line-a"></div>
           <div class="connection-line line-b"></div>
-          <div class="signal-card card-a"><small>01</small><strong>QUALIFY</strong><span>Opportunity relevance</span></div>
-          <div class="signal-card card-b"><small>02</small><strong>ALIGN</strong><span>Supplier capability</span></div>
-          <div class="frame-label bottom"><span>COMMERCIAL INTELLIGENCE</span><span>→ CONNECT</span></div>
+          <div class="signal-card card-a"><small>01</small><strong data-i18n="visual.qualify">QUALIFY</strong><span data-i18n="visual.relevance">Opportunity relevance</span></div>
+          <div class="signal-card card-b"><small>02</small><strong data-i18n="visual.align">ALIGN</strong><span data-i18n="visual.capability">Supplier capability</span></div>
+          <div class="frame-label bottom"><span data-i18n="visual.intelligence">COMMERCIAL INTELLIGENCE</span><span data-i18n="visual.connect">CONNECT</span></div>
         </div>
       </div>
     </section>
 
     <section class="statement section-shell reveal">
-      <p class="section-index">01 / POSITION</p>
+      <p class="section-index"><bdi>01</bdi><span aria-hidden="true">/</span><span data-i18n="sections.position">POSITION</span></p>
       <div class="statement-copy">
-        <p class="kicker">Not another directory. Not another inbox.</p>
-        <h2>We focus on the point where a real market need meets a supplier that can actually deliver.</h2>
+        <p class="kicker" data-i18n="statement.kicker">Not another directory. Not another inbox.</p>
+        <h2 data-i18n="statement.title">We focus on the point where a real market need meets a supplier that can actually deliver.</h2>
       </div>
     </section>
 
     <section class="capabilities section-shell" id="capabilities">
       <div class="section-heading reveal">
-        <p class="section-index">02 / CAPABILITIES</p>
+        <p class="section-index"><bdi>02</bdi><span aria-hidden="true">/</span><span data-i18n="sections.capabilities">CAPABILITIES</span></p>
         <div>
-          <p class="kicker">Built for commercial movement</p>
-          <h2>From signal to serious conversation.</h2>
+          <p class="kicker" data-i18n="capabilities.kicker">Built for commercial movement</p>
+          <h2 data-i18n="capabilities.title">From signal to serious conversation.</h2>
         </div>
       </div>
       <div class="capability-grid">
         <article class="capability-card reveal">
           <span class="card-num">01</span>
           <div class="icon icon-radar" aria-hidden="true"><span></span></div>
-          <h3>Opportunity Sourcing</h3>
-          <p>We identify relevant commercial and procurement opportunities where timing, scope and supplier capability can align.</p>
-          <span class="card-link">Find the signal <b>↗</b></span>
+          <h3 data-i18n="capabilities.cards.sourcing.title">Opportunity Sourcing</h3>
+          <p data-i18n="capabilities.cards.sourcing.body">We identify relevant commercial and procurement opportunities where timing, scope and supplier capability can align.</p>
+          <span class="card-link"><span data-i18n="capabilities.cards.sourcing.link">Find the signal</span><b aria-hidden="true">↗</b></span>
         </article>
         <article class="capability-card reveal delay-one">
           <span class="card-num">02</span>
           <div class="icon icon-fit" aria-hidden="true"><span></span><span></span></div>
-          <h3>Supplier Fit</h3>
-          <p>We narrow the field to suppliers whose portfolio, delivery profile and commercial appetite fit the opportunity.</p>
-          <span class="card-link">Match capability <b>↗</b></span>
+          <h3 data-i18n="capabilities.cards.fit.title">Supplier Fit</h3>
+          <p data-i18n="capabilities.cards.fit.body">We narrow the field to suppliers whose portfolio, delivery profile and commercial appetite fit the opportunity.</p>
+          <span class="card-link"><span data-i18n="capabilities.cards.fit.link">Match capability</span><b aria-hidden="true">↗</b></span>
         </article>
         <article class="capability-card reveal delay-two">
           <span class="card-num">03</span>
           <div class="icon icon-link" aria-hidden="true"><span></span><span></span></div>
-          <h3>B2B Introductions</h3>
-          <p>We create a direct commercial path between relevant parties, reducing wasted outreach and accelerating qualified discussion.</p>
-          <span class="card-link">Create momentum <b>↗</b></span>
+          <h3 data-i18n="capabilities.cards.introductions.title">B2B Introductions</h3>
+          <p data-i18n="capabilities.cards.introductions.body">We create a direct commercial path between relevant parties, reducing wasted outreach and accelerating qualified discussion.</p>
+          <span class="card-link"><span data-i18n="capabilities.cards.introductions.link">Create momentum</span><b aria-hidden="true">↗</b></span>
         </article>
       </div>
     </section>
@@ -115,55 +151,55 @@
     <section class="approach section-shell" id="approach">
       <div class="approach-panel reveal">
         <div class="section-heading compact">
-          <p class="section-index">03 / METHOD</p>
+          <p class="section-index"><bdi>03</bdi><span aria-hidden="true">/</span><span data-i18n="sections.method">METHOD</span></p>
           <div>
-            <p class="kicker">A focused commercial sequence</p>
-            <h2>Less noise. Better fit. Faster clarity.</h2>
+            <p class="kicker" data-i18n="approach.kicker">A focused commercial sequence</p>
+            <h2 data-i18n="approach.title">Less noise. Better fit. Faster clarity.</h2>
           </div>
         </div>
         <div class="steps">
-          <div class="step"><span>01</span><div><strong>Qualify the opportunity</strong><p>Scope, timing, buyer context and commercial relevance.</p></div></div>
-          <div class="step"><span>02</span><div><strong>Map the right supply</strong><p>Capability, product fit, geography and delivery reality.</p></div></div>
-          <div class="step"><span>03</span><div><strong>Open the right conversation</strong><p>Concise, decision-oriented commercial introduction.</p></div></div>
-          <div class="step"><span>04</span><div><strong>Advance with discipline</strong><p>Keep the path centered on the next commercial decision.</p></div></div>
+          <div class="step"><span>01</span><div><strong data-i18n="approach.steps.qualify.title">Qualify the opportunity</strong><p data-i18n="approach.steps.qualify.body">Scope, timing, buyer context and commercial relevance.</p></div></div>
+          <div class="step"><span>02</span><div><strong data-i18n="approach.steps.map.title">Map the right supply</strong><p data-i18n="approach.steps.map.body">Capability, product fit, geography and delivery reality.</p></div></div>
+          <div class="step"><span>03</span><div><strong data-i18n="approach.steps.open.title">Open the right conversation</strong><p data-i18n="approach.steps.open.body">Concise, decision-oriented commercial introduction.</p></div></div>
+          <div class="step"><span>04</span><div><strong data-i18n="approach.steps.advance.title">Advance with discipline</strong><p data-i18n="approach.steps.advance.body">Keep the path centered on the next commercial decision.</p></div></div>
         </div>
       </div>
     </section>
 
     <section class="focus section-shell" id="focus">
       <div class="section-heading reveal">
-        <p class="section-index">04 / FOCUS</p>
+        <p class="section-index"><bdi>04</bdi><span aria-hidden="true">/</span><span data-i18n="sections.focus">FOCUS</span></p>
         <div>
-          <p class="kicker">Opportunity coverage</p>
-          <h2>Complex supply. Real demand.</h2>
+          <p class="kicker" data-i18n="focus.kicker">Opportunity coverage</p>
+          <h2 data-i18n="focus.title">Complex supply. Real demand.</h2>
         </div>
       </div>
       <div class="focus-list reveal">
-        <div class="focus-row"><span>01</span><strong>Infrastructure & industrial systems</strong><em>Procurement / Supply</em></div>
-        <div class="focus-row"><span>02</span><strong>Energy & utility solutions</strong><em>Projects / Equipment</em></div>
-        <div class="focus-row"><span>03</span><strong>Medical & laboratory supply</strong><em>Equipment / Consumables</em></div>
-        <div class="focus-row"><span>04</span><strong>Specialized B2B sourcing</strong><em>Qualified / Opportunity-led</em></div>
+        <div class="focus-row"><span>01</span><strong data-i18n="focus.rows.infrastructure.title">Infrastructure &amp; industrial systems</strong><em data-i18n="focus.rows.infrastructure.meta">Procurement / Supply</em></div>
+        <div class="focus-row"><span>02</span><strong data-i18n="focus.rows.energy.title">Energy &amp; utility solutions</strong><em data-i18n="focus.rows.energy.meta">Projects / Equipment</em></div>
+        <div class="focus-row"><span>03</span><strong data-i18n="focus.rows.medical.title">Medical &amp; laboratory supply</strong><em data-i18n="focus.rows.medical.meta">Equipment / Consumables</em></div>
+        <div class="focus-row"><span>04</span><strong data-i18n="focus.rows.specialized.title">Specialized B2B sourcing</strong><em data-i18n="focus.rows.specialized.meta">Qualified / Opportunity-led</em></div>
       </div>
     </section>
 
     <section class="cta-section section-shell reveal">
       <div class="cta-panel">
         <div class="cta-glow" aria-hidden="true"></div>
-        <p class="section-index">05 / CONTACT</p>
-        <p class="kicker">A relevant opportunity deserves a direct conversation.</p>
-        <h2>Bring the capability.<br /><span>We’ll bring the commercial focus.</span></h2>
+        <p class="section-index"><bdi>05</bdi><span aria-hidden="true">/</span><span data-i18n="sections.contact">CONTACT</span></p>
+        <p class="kicker" data-i18n="cta.kicker">A relevant opportunity deserves a direct conversation.</p>
+        <h2 data-i18n-html="cta.title">Bring the capability.<br /><span>We’ll bring the commercial focus.</span></h2>
         <div class="cta-bottom">
-          <a class="btn btn-primary large" href="mailto:hasan@tolvano.com?subject=Commercial%20Discussion%20with%20TOLVANO">hasan@tolvano.com <span aria-hidden="true">↗</span></a>
-          <p>For supplier partnerships, sourcing mandates and qualified B2B opportunities.</p>
+          <a class="btn btn-primary large" href="mailto:hasan@tolvano.com?subject=Commercial%20Discussion%20with%20TOLVANO" data-i18n-mailto="emailSubjects.footer" data-mailto-email="hasan@tolvano.com"><span>hasan@tolvano.com</span> <span aria-hidden="true">↗</span></a>
+          <p data-i18n="cta.body">For supplier partnerships, sourcing mandates and qualified B2B opportunities.</p>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer section-shell">
-    <a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true"><span></span><span></span></span><span class="brand-word">TOLVANO</span></a>
-    <p>Commercial opportunity sourcing & B2B introductions.</p>
-    <p>© <span id="year">2026</span> TOLVANO. All rights reserved.</p>
+    <a class="brand footer-brand" href="#top" aria-label="TOLVANO home" data-i18n-aria-label="brand.home"><span class="brand-mark" aria-hidden="true"><span></span><span></span></span><span class="brand-word">TOLVANO</span></a>
+    <p data-i18n="footer.description">Commercial opportunity sourcing &amp; B2B introductions.</p>
+    <p><span>© </span><span id="year">2026</span><span> TOLVANO. </span><span data-i18n="footer.rights">All rights reserved.</span></p>
   </footer>
 
   <script src="script.js"></script>
