@@ -263,3 +263,25 @@ html[dir="rtl"] .line-b{transform-origin:left center;transform:rotate(27deg)}
 @media (prefers-reduced-motion:reduce){
   .mobile-cta{transition:none}
 }
+
+
+/* V1 freeze mobile menu and numbering polish */
+.focus-row{grid-template-columns:1fr auto}
+.focus-row em{grid-column:auto}
+.capability-card .icon{margin-top:12px}
+
+@media (max-width:1020px){
+  body.menu-open::before{inset:0}
+  body.menu-open .site-header{top:0;left:50%;right:auto;inset-inline-start:auto;transform:translateX(-50%);background:var(--bg)}
+  .nav.mobile-open{left:0;right:0;inset-inline:auto}
+}
+
+@media (max-width:760px){
+  .section-index{font-size:10px;letter-spacing:.11em;color:#9ca69c;opacity:1}
+  .capability-card .icon{margin-top:8px}
+}
+
+@media (max-width:700px){
+  .focus-row{grid-template-columns:1fr;gap:8px}
+  .focus-row em{grid-column:auto}
+}
