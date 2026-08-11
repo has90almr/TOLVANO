@@ -361,6 +361,9 @@ const meta = {
 
 let activeLanguage = root.lang === 'ar' ? 'ar' : pageLanguage;
 let menuScrollY = 0;
+let pendingMenuAction = null;
+let menuHistoryBackPending = false;
+let previousScrollRestoration = null;
 
 function getTranslation(language, key) {
   return key.split('.').reduce((value, segment) => value && value[segment], translations[language]);
@@ -374,6 +377,19 @@ function languageUrl(language) {
   return language === 'ar' ? 'https://tolvano.com/ar/' : 'https://tolvano.com/';
 }
 
+function menuIsOpen() {
+  return Boolean(document.body && document.body.classList.contains('menu-open'));
+}
+
+function currentHistoryState() {
+  const state = window.history && window.history.state;
+  return state && typeof state === 'object' ? state : {};
+}
+
+function menuHistoryIsCurrent() {
+  return currentHistoryState().tolvanoMenuOpen === true;
+}
+
 function updateMenuToggleLabel() {
   if (!menuToggle) return;
   const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
@@ -381,13 +397,19 @@ function updateMenuToggleLabel() {
   menuToggle.setAttribute('aria-label', getTranslation(activeLanguage, labelKey));
 }
 
-function setMenuState(isOpen) {
+function setMenuVisualState(isOpen) {
   if (!menuToggle || !nav) return;
 
-  const wasOpen = document.body.classList.contains('menu-open');
-  if (isOpen && !wasOpen) {
+  const wasOpen = menuIsOpen();
+  if (isOpen === wasOpen) return;
+
+  if (isOpen) {
     menuScrollY = window.scrollY;
     document.body.style.setProperty('--menu-scroll-offset', `-${menuScrollY}px`);
+    if (typeof window.history.scrollRestoration === 'string') {
+      previousScrollRestoration = window.history.scrollRestoration;
+      window.history.scrollRestoration = 'manual';
+    }
   }
 
   menuToggle.classList.toggle('open', isOpen);
@@ -397,7 +419,7 @@ function setMenuState(isOpen) {
   menuToggle.setAttribute('aria-expanded', String(isOpen));
   updateMenuToggleLabel();
 
-  if (!isOpen && wasOpen) {
+  if (!isOpen) {
     document.body.style.removeProperty('--menu-scroll-offset');
     const previousScrollBehavior = root.style.scrollBehavior;
     root.style.scrollBehavior = 'auto';
@@ -406,12 +428,94 @@ function setMenuState(isOpen) {
   }
 }
 
+function restoreHistoryScrollRestoration() {
+  if (previousScrollRestoration === null) return;
+
+  const restore = () => {
+    window.history.scrollRestoration = previousScrollRestoration;
+    previousScrollRestoration = null;
+  };
+
+  if (typeof window.requestAnimationFrame === 'function') {
+    window.requestAnimationFrame(restore);
+  } else {
+    restore();
+  }
+}
+
+function pushMenuHistoryState() {
+  try {
+    window.history.pushState(
+      { ...currentHistoryState(), tolvanoMenuOpen: true },
+      '',
+      window.location.href
+    );
+    return true;
+  } catch (error) {
+    return false;
+  }
+}
+
+function runPendingMenuAction() {
+  const action = pendingMenuAction;
+  pendingMenuAction = null;
+  if (!action) return;
+
+  if (typeof window.requestAnimationFrame === 'function') {
+    window.requestAnimationFrame(action);
+  } else {
+    action();
+  }
+}
+
+function openMenu() {
+  if (menuHistoryBackPending || menuIsOpen()) return;
+
+  if (menuHistoryIsCurrent()) {
+    setMenuVisualState(true);
+    return;
+  }
+
+  setMenuVisualState(true);
+  pushMenuHistoryState();
+}
+
+function closeMenu(afterClose = null) {
+  if (afterClose) pendingMenuAction = afterClose;
+  if (menuHistoryBackPending) return;
+
+  if (menuHistoryIsCurrent()) {
+    menuHistoryBackPending = true;
+    setMenuVisualState(false);
+    try {
+      window.history.back();
+      return;
+    } catch (error) {
+      menuHistoryBackPending = false;
+    }
+  }
+
+  setMenuVisualState(false);
+  restoreHistoryScrollRestoration();
+  runPendingMenuAction();
+}
+
+function setMenuState(isOpen, { afterClose = null } = {}) {
+  if (isOpen) {
+    openMenu();
+  } else {
+    closeMenu(afterClose);
+  }
+}
+
 function updateBrowserUrl(language) {
   try {
     const url = new URL(window.location.href);
     const projectRoot = url.pathname.startsWith('/TOLVANO/') ? '/TOLVANO/' : '/';
     const pathname = language === 'ar' ? `${projectRoot}ar/` : projectRoot;
-    window.history.replaceState({ language }, '', `${pathname}${url.hash}`);
+    const state = currentHistoryState();
+    delete state.tolvanoMenuOpen;
+    window.history.replaceState({ ...state, language }, '', `${pathname}${url.hash}`);
   } catch (error) {
     // The visual language switch remains available when history APIs are unavailable.
   }
@@ -479,23 +583,54 @@ function applyLanguage(language, { announce = false, updateUrl = false } = {}) {
 document.querySelectorAll('[data-language-option]').forEach((link) => {
   link.addEventListener('click', (event) => {
     event.preventDefault();
-    applyLanguage(link.dataset.languageOption, { announce: true, updateUrl: true });
+    const applySelectedLanguage = () => {
+      applyLanguage(link.dataset.languageOption, { announce: true, updateUrl: true });
+    };
+
+    if (menuIsOpen() || menuHistoryIsCurrent()) {
+      setMenuState(false, { afterClose: applySelectedLanguage });
+    } else {
+      applySelectedLanguage();
+    }
   });
 });
 
 if (menuToggle && nav) {
   menuToggle.addEventListener('click', () => {
-    setMenuState(menuToggle.getAttribute('aria-expanded') !== 'true');
+    setMenuState(!menuIsOpen());
   });
 
   nav.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => setMenuState(false));
+    link.addEventListener('click', (event) => {
+      if (!menuIsOpen() && !menuHistoryIsCurrent()) return;
+
+      event.preventDefault();
+      const destination = link.getAttribute('href');
+      setMenuState(false, {
+        afterClose: () => {
+          if (destination) window.location.href = destination;
+        }
+      });
+    });
   });
 
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && document.body.classList.contains('menu-open')) {
+    if (event.key === 'Escape' && menuIsOpen()) {
       setMenuState(false);
     }
+  });
+
+  window.addEventListener('popstate', (event) => {
+    menuHistoryBackPending = false;
+
+    if (event.state && event.state.tolvanoMenuOpen === true) {
+      setMenuVisualState(true);
+      return;
+    }
+
+    setMenuVisualState(false);
+    restoreHistoryScrollRestoration();
+    runPendingMenuAction();
   });
 }
 
