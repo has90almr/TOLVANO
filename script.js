@@ -1,10 +1,10 @@
 const translations = {
   en: {
     meta: {
-      title: 'TOLVANO — Qualified Demand. Capable Supply.',
-      description: 'TOLVANO connects qualified commercial opportunities with capable suppliers through focused sourcing, supplier fit and direct B2B introductions.',
-      ogTitle: 'TOLVANO — Qualified Demand. Capable Supply.',
-      ogDescription: 'Focused B2B sourcing, commercial introductions and opportunity alignment for serious suppliers and buyers.',
+      title: 'TOLVANO — B2B Opportunity Sourcing & Introductions',
+      description: 'TOLVANO is a B2B opportunity sourcing and supplier-introduction partner. We clarify buyer requirements, assess supplier fit and facilitate focused commercial introductions.',
+      ogTitle: 'TOLVANO — B2B Opportunity Sourcing & Introductions',
+      ogDescription: 'Defined requirements, relevant supplier fit and focused B2B commercial introductions.',
       locale: 'en_US',
       language: 'en',
       status: 'Language changed to English.',
@@ -16,10 +16,10 @@ const translations = {
     },
     navigation: {
       primary: 'Primary navigation',
-      capabilities: 'Capabilities',
-      approach: 'Approach',
-      focus: 'Focus',
-      contact: 'Start a discussion'
+      capabilities: 'What we do',
+      approach: 'How it works',
+      focus: 'Focus areas',
+      contact: 'Start a commercial discussion'
     },
     language: {
       selector: 'Language selector'
@@ -27,86 +27,88 @@ const translations = {
     emailSubjects: {
       header: 'Commercial Discussion with TOLVANO',
       opportunity: 'Commercial Opportunity with TOLVANO',
-      footer: 'Commercial Discussion with TOLVANO'
+      footer: 'Commercial Discussion with TOLVANO',
+      mobile: 'Commercial Discussion with TOLVANO'
     },
     hero: {
-      eyebrow: 'B2B COMMERCIAL OPPORTUNITY PARTNER',
-      title: 'Qualified demand.<br /><span>Capable supply.</span><br />One decisive connection.',
-      lead: 'TOLVANO helps serious suppliers and buyers move from market noise to commercial relevance — through focused sourcing, supplier fit and direct opportunity alignment.',
-      primaryCta: 'Discuss an opportunity',
-      secondaryCta: 'Explore TOLVANO',
-      principles: 'TOLVANO principles',
-      principleOne: 'Opportunity-led',
-      principleTwo: 'Supplier-fit focused',
-      principleThree: 'Commercially direct'
+      eyebrow: 'B2B OPPORTUNITY SOURCING & SUPPLIER INTRODUCTIONS',
+      title: 'Defined demand.<br /><span>Relevant supply.</span><br />One focused commercial introduction.',
+      lead: 'TOLVANO is a B2B opportunity sourcing and supplier-introduction partner. We clarify the requirement, assess supplier fit and facilitate a focused first commercial conversation between the right parties.',
+      primaryCta: 'Discuss your requirement or capability',
+      secondaryCta: 'See how TOLVANO works',
+      principles: 'TOLVANO working principles',
+      principleOne: 'Defined requirement',
+      principleTwo: 'Relevant supplier fit',
+      principleThree: 'Focused introduction'
     },
     visual: {
-      signal: 'TOLVANO / SIGNAL',
-      live: 'LIVE',
-      qualify: 'QUALIFY',
-      relevance: 'Opportunity relevance',
-      align: 'ALIGN',
-      capability: 'Supplier capability',
-      intelligence: 'COMMERCIAL INTELLIGENCE',
-      connect: 'CONNECT'
+      signal: 'TOLVANO / OPPORTUNITY MAP',
+      status: 'FOCUSED',
+      qualify: 'ASSESS',
+      relevance: 'Requirement clarity',
+      align: 'MATCH',
+      capability: 'Supplier fit',
+      intelligence: 'COMMERCIAL INTRODUCTION',
+      connect: 'NEXT STEP'
     },
     sections: {
       position: 'POSITION',
       capabilities: 'CAPABILITIES',
       method: 'METHOD',
       focus: 'FOCUS',
+      basis: 'WORKING BASIS',
       contact: 'CONTACT'
     },
     statement: {
-      kicker: 'Not another directory. Not another inbox.',
-      title: 'We focus on the point where a real market need meets a supplier that can actually deliver.'
+      kicker: 'Not a directory. Not volume outreach.',
+      title: 'TOLVANO works as a B2B opportunity sourcing and introduction partner: qualify the need, assess supplier fit, then open the right commercial conversation.'
     },
     capabilities: {
-      kicker: 'Built for commercial movement',
-      title: 'From signal to serious conversation.',
+      kicker: 'A disciplined path to the right first conversation',
+      title: 'From a defined brief to a relevant introduction.',
       cards: {
         sourcing: {
           title: 'Opportunity Sourcing',
-          body: 'We identify relevant commercial and procurement opportunities where timing, scope and supplier capability can align.',
-          link: 'Find the signal'
+          body: 'We identify commercially relevant buyer requirements and procurement opportunities where scope, timing and supply potential can genuinely align.',
+          link: 'Define the opportunity'
         },
         fit: {
-          title: 'Supplier Fit',
-          body: 'We narrow the field to suppliers whose portfolio, delivery profile and commercial appetite fit the opportunity.',
-          link: 'Match capability'
+          title: 'Supplier-Fit Assessment',
+          body: 'We consider product relevance, delivery capability, geography and commercial appetite before a supplier is introduced to the opportunity.',
+          link: 'Assess the fit'
         },
         introductions: {
           title: 'B2B Introductions',
-          body: 'We create a direct commercial path between relevant parties, reducing wasted outreach and accelerating qualified discussion.',
-          link: 'Create momentum'
+          body: 'When a relevant fit is identified, we facilitate a direct, decision-oriented first conversation between the appropriate commercial parties.',
+          link: 'Open the conversation'
         }
       }
     },
     approach: {
       kicker: 'A focused commercial sequence',
-      title: 'Less noise. Better fit. Faster clarity.',
+      title: 'Clarity first. Fit second. Conversation third.',
       steps: {
         qualify: {
-          title: 'Qualify the opportunity',
-          body: 'Scope, timing, buyer context and commercial relevance.'
+          title: 'Clarify the commercial brief',
+          body: 'Requirement, scope, timing, buyer context and commercial relevance.'
         },
         map: {
-          title: 'Map the right supply',
-          body: 'Capability, product fit, geography and delivery reality.'
+          title: 'Assess the supply fit',
+          body: 'Product relevance, capability, geography and delivery reality.'
         },
         open: {
-          title: 'Open the right conversation',
-          body: 'Concise, decision-oriented commercial introduction.'
+          title: 'Facilitate the introduction',
+          body: 'A concise first connection for the parties that should be speaking.'
         },
         advance: {
-          title: 'Advance with discipline',
-          body: 'Keep the path centered on the next commercial decision.'
+          title: 'Keep the next step clear',
+          body: 'The discussion stays centered on the next practical commercial decision.'
         }
       }
     },
     focus: {
-      kicker: 'Opportunity coverage',
-      title: 'Complex supply. Real demand.',
+      kicker: 'Areas where fit and timing matter',
+      title: 'Complex supply. Defined demand.',
       rows: {
         infrastructure: {
           title: 'Infrastructure & industrial systems',
@@ -122,26 +124,57 @@ const translations = {
         },
         specialized: {
           title: 'Specialized B2B sourcing',
-          meta: 'Qualified / Opportunity-led'
+          meta: 'Defined / Requirement-led'
+        }
+      }
+    },
+    basis: {
+      label: 'TOLVANO working basis',
+      kicker: 'A clear starting point for a serious B2B conversation',
+      title: 'Clear remit. Relevant fit. Direct contact.',
+      items: {
+        remit: {
+          title: 'Commercial remit',
+          body: 'Opportunity sourcing, supplier-fit assessment and focused B2B introductions.'
+        },
+        start: {
+          title: 'Defined starting point',
+          body: 'A clear buyer requirement or a credible supply capability gives the conversation its direction.'
+        },
+        contact: {
+          title: 'Direct business contact',
+          body: 'The TOLVANO business inbox is the direct starting point for a commercial discussion.'
         }
       }
     },
     cta: {
-      kicker: 'A relevant opportunity deserves a direct conversation.',
-      title: 'Bring the capability.<br /><span>We’ll bring the commercial focus.</span>',
-      body: 'For supplier partnerships, sourcing mandates and qualified B2B opportunities.'
+      kicker: 'A useful first conversation starts with a clear brief.',
+      title: 'Bring a requirement or a capability.<br /><span>We’ll help focus the commercial fit.</span>',
+      emailCta: 'Start by email',
+      body: 'For suppliers with relevant capability, buyers with defined requirements and organizations with focused sourcing needs.'
+    },
+    contact: {
+      copyPrompt: 'Prefer to use your own email client? Copy the address below.',
+      copyAction: 'Copy address',
+      copyAria: 'Copy TOLVANO email address',
+      copySuccess: 'Email address copied.',
+      copyFallback: 'Email selected — copy it from your browser.'
+    },
+    mobileCta: {
+      label: 'Start a commercial discussion',
+      action: 'Start a commercial discussion'
     },
     footer: {
-      description: 'Commercial opportunity sourcing & B2B introductions.',
+      description: 'B2B opportunity sourcing & supplier introductions.',
       rights: 'All rights reserved.'
     }
   },
   ar: {
     meta: {
-      title: 'TOLVANO — طلبٌ مؤهل. توريدٌ قادر.',
-      description: 'تربط TOLVANO الفرص التجارية المؤهلة بالموردين القادرين عبر استكشاف الفرص، ومواءمة الموردين، والربط المباشر بين الشركات.',
-      ogTitle: 'TOLVANO — طلبٌ مؤهل. توريدٌ قادر.',
-      ogDescription: 'استكشاف مركز للفرص التجارية، ومواءمة للموردين، وربط مباشر بين الشركات للموردين والمشترين الجادين.',
+      title: 'TOLVANO — استكشاف فرص B2B وربط تجاري أولي',
+      description: 'TOLVANO جهة متخصصة في استكشاف فرص B2B والربط التجاري الأولي بين الموردين والمشترين. نوضح الاحتياج، نقيّم ملاءمة المورد، ونهيّئ حوارًا تجاريًا مركزًا.',
+      ogTitle: 'TOLVANO — استكشاف فرص B2B وربط تجاري أولي',
+      ogDescription: 'احتياج واضح، ملاءمة مدروسة للمورد، وربط تجاري أولي بين الشركات.',
       locale: 'ar_AR',
       language: 'ar',
       status: 'تم اختيار اللغة العربية.',
@@ -153,97 +186,99 @@ const translations = {
     },
     navigation: {
       primary: 'التنقل الرئيسي',
-      capabilities: 'قدراتنا',
-      approach: 'منهجنا',
-      focus: 'تركيزنا',
-      contact: 'ابدأ محادثة'
+      capabilities: 'ماذا نقدم',
+      approach: 'كيف نعمل',
+      focus: 'مجالات التركيز',
+      contact: 'ابدأ محادثة تجارية'
     },
     language: {
       selector: 'اختيار اللغة'
     },
     emailSubjects: {
       header: 'محادثة تجارية مع TOLVANO',
-      opportunity: 'فرصة تجارية مع TOLVANO',
-      footer: 'محادثة تجارية مع TOLVANO'
+      opportunity: 'احتياج أو فرصة تجارية مع TOLVANO',
+      footer: 'محادثة تجارية مع TOLVANO',
+      mobile: 'محادثة تجارية مع TOLVANO'
     },
     hero: {
-      eyebrow: 'شريكك في الفرص التجارية بين الشركات',
-      title: 'طلبٌ مؤهل.<br /><span>توريدٌ قادر.</span><br />رابطٌ تجاري يحسم المسار.',
-      lead: 'تساعد TOLVANO الموردين والمشترين الجادين على الانتقال من ضجيج السوق إلى فرصة تجارية ذات معنى؛ عبر استكشاف مركز للفرص، ومواءمة دقيقة للقدرات، وربط مباشر بين الأطراف المناسبة.',
-      primaryCta: 'ناقش فرصة',
-      secondaryCta: 'تعرّف على TOLVANO',
-      principles: 'مبادئ TOLVANO',
-      principleOne: 'منطلقون من الفرصة',
-      principleTwo: 'تركيز على ملاءمة المورد',
-      principleThree: 'مسار تجاري مباشر'
+      eyebrow: 'استكشاف فرص B2B وربط الموردين بالطلب',
+      title: 'احتياج واضح.<br /><span>توريد ملائم.</span><br />ربط تجاري يبدأ من الملاءمة.',
+      lead: 'TOLVANO جهة متخصصة في استكشاف فرص B2B والربط التجاري الأولي. نوضح الاحتياج، نقيّم ملاءمة المورد، ثم نهيّئ حوارًا تجاريًا مركزًا بين الأطراف المناسبة.',
+      primaryCta: 'شاركنا احتياجك أو قدرتك',
+      secondaryCta: 'تعرّف إلى آلية TOLVANO',
+      principles: 'أسس عمل TOLVANO',
+      principleOne: 'احتياج محدد',
+      principleTwo: 'ملاءمة مدروسة للمورد',
+      principleThree: 'ربط تجاري مركز'
     },
     visual: {
-      signal: 'TOLVANO / إشارة',
-      live: 'مباشر',
-      qualify: 'تأهيل',
-      relevance: 'ملاءمة الفرصة',
+      signal: 'TOLVANO / خريطة فرصة',
+      status: 'مركّز',
+      qualify: 'تقييم',
+      relevance: 'وضوح الاحتياج',
       align: 'مواءمة',
-      capability: 'قدرة المورد',
-      intelligence: 'ذكاء تجاري',
-      connect: 'ربط مباشر'
+      capability: 'ملاءمة المورد',
+      intelligence: 'ربط تجاري أولي',
+      connect: 'الخطوة التالية'
     },
     sections: {
-      position: 'الموقع',
-      capabilities: 'القدرات',
+      position: 'الدور',
+      capabilities: 'الخدمات',
       method: 'المنهج',
       focus: 'التركيز',
+      basis: 'أساس العمل',
       contact: 'تواصل'
     },
     statement: {
-      kicker: 'ليست دليلاً آخر. ولا صندوق بريد إضافياً.',
-      title: 'نركز على اللحظة التي تلتقي فيها حاجة سوقية حقيقية بمورد قادر فعلاً على التنفيذ.'
+      kicker: 'لسنا دليلاً تجاريًا ولا خدمة مراسلات جماعية.',
+      title: 'تعمل TOLVANO كشريك في استكشاف الفرص والربط الأولي بين الشركات: نؤهّل الاحتياج، نقيّم ملاءمة المورد، ثم نفتتح المحادثة التجارية الصحيحة.'
     },
     capabilities: {
-      kicker: 'مصممون لتحريك الأعمال',
-      title: 'من إشارة السوق إلى حوار جاد.',
+      kicker: 'مسار منضبط إلى المحادثة التجارية الصحيحة',
+      title: 'من ملخص واضح إلى ربط تجاري ذي صلة.',
       cards: {
         sourcing: {
           title: 'استكشاف الفرص',
-          body: 'نرصد فرصاً تجارية وفرص شراء ملائمة، حيث تتقاطع التوقيتات والنطاق والقدرات القابلة للتنفيذ.',
-          link: 'التقط الإشارة'
+          body: 'نبحث عن احتياجات شراء وفرص تجارية ذات صلة، يمكن أن تتقاطع فيها الأولوية والتوقيت ونطاق التوريد بصورة واقعية.',
+          link: 'حدّد الفرصة'
         },
         fit: {
-          title: 'مواءمة الموردين',
-          body: 'نضيّق نطاق البحث إلى الموردين الذين تتوافق محافظهم وقدراتهم التشغيلية واهتماماتهم التجارية مع الفرصة.',
-          link: 'طابق القدرة'
+          title: 'تقييم ملاءمة المورد',
+          body: 'ننظر في ملاءمة المنتج والقدرة التشغيلية والنطاق الجغرافي والاستعداد التجاري قبل تقديم المورد إلى الفرصة.',
+          link: 'قيّم الملاءمة'
         },
         introductions: {
-          title: 'ربط مباشر بين الشركات',
-          body: 'نفتح مساراً تجارياً مباشراً بين الأطراف ذات الصلة، لتقليل التواصل غير المجدي وتسريع الحوار المؤهل.',
-          link: 'اصنع الزخم'
+          title: 'ربط B2B أولي',
+          body: 'عند وجود ملاءمة حقيقية، نهيّئ اتصالًا أوليًا مباشرًا ومركزًا على القرار بين الأطراف التجارية المناسبة.',
+          link: 'افتح المحادثة'
         }
       }
     },
     approach: {
-      kicker: 'تسلسل تجاري مركّز',
-      title: 'ضوضاء أقل. مواءمة أفضل. وضوح أسرع.',
+      kicker: 'تسلسل تجاري مركز',
+      title: 'وضوح أولًا. ملاءمة ثانيًا. محادثة ثالثًا.',
       steps: {
         qualify: {
-          title: 'تأهيل الفرصة',
-          body: 'النطاق، التوقيت، سياق المشتري، والجدوى التجارية.'
+          title: 'توضيح الملخص التجاري',
+          body: 'الاحتياج، النطاق، التوقيت، سياق المشتري، والجدوى التجارية.'
         },
         map: {
-          title: 'رسم خريطة للتوريد الملائم',
-          body: 'القدرة، ملاءمة المنتج، الجغرافيا، وواقعية التنفيذ.'
+          title: 'تقييم ملاءمة التوريد',
+          body: 'ملاءمة المنتج، القدرة، الجغرافيا، وواقعية التنفيذ.'
         },
         open: {
-          title: 'فتح الحوار الصحيح',
-          body: 'ربط تجاري موجز يركز على القرار.'
+          title: 'تهيئة الربط الأولي',
+          body: 'اتصال أول موجز بين الأطراف التي ينبغي أن تبدأ الحديث.'
         },
         advance: {
-          title: 'التقدّم بانضباط',
-          body: 'نبقي المسار منصباً على القرار التجاري التالي.'
+          title: 'إبقاء الخطوة التالية واضحة',
+          body: 'يبقى النقاش متمحورًا حول القرار التجاري العملي التالي.'
         }
       }
     },
     focus: {
-      kicker: 'نطاق الفرص',
-      title: 'توريد معقد. طلب حقيقي.',
+      kicker: 'مجالات تكون فيها الملاءمة والتوقيت حاسمين',
+      title: 'توريد معقد. احتياج محدد.',
       rows: {
         infrastructure: {
           title: 'البنية التحتية والأنظمة الصناعية',
@@ -259,26 +294,59 @@ const translations = {
         },
         specialized: {
           title: 'استكشاف B2B المتخصص',
-          meta: 'مؤهّل / قائم على الفرص'
+          meta: 'احتياج محدد / قائم على الطلب'
+        }
+      }
+    },
+    basis: {
+      label: 'أساس عمل TOLVANO',
+      kicker: 'نقطة بداية واضحة لمحادثة B2B جادة',
+      title: 'نطاق واضح. ملاءمة مدروسة. تواصل مباشر.',
+      items: {
+        remit: {
+          title: 'الدور التجاري',
+          body: 'استكشاف الفرص، وتقييم ملاءمة المورد، والربط التجاري الأولي بين الشركات.'
+        },
+        start: {
+          title: 'نقطة انطلاق محددة',
+          body: 'احتياج شراء واضح أو قدرة توريد قابلة للتقديم يمنح المحادثة اتجاهها.'
+        },
+        contact: {
+          title: 'تواصل تجاري مباشر',
+          body: 'بريد TOLVANO التجاري هو نقطة البدء المباشرة للمحادثة.'
         }
       }
     },
     cta: {
-      kicker: 'فرصة ذات صلة تستحق حواراً مباشراً.',
-      title: 'قدّم قدراتك.<br /><span>ونحن نمنح المسار التجاري تركيزه.</span>',
-      body: 'لشراكات الموردين، وتكليفات التوريد، وفرص B2B المؤهلة.'
+      kicker: 'المحادثة المفيدة تبدأ من ملخص واضح.',
+      title: 'لديك احتياج أو قدرة توريد؟<br /><span>لنبدأ من الملاءمة التجارية الصحيحة.</span>',
+      emailCta: 'ابدأ عبر البريد',
+      body: 'للموردين ذوي القدرات المناسبة، وللمشترين ذوي الاحتياجات المحددة، وللجهات ذات متطلبات التوريد المركزة.'
+    },
+    contact: {
+      copyPrompt: 'تفضّل استخدام بريدك الخاص؟ انسخ العنوان مباشرة.',
+      copyAction: 'نسخ البريد',
+      copyAria: 'نسخ بريد TOLVANO',
+      copySuccess: 'تم نسخ البريد.',
+      copyFallback: 'تم تحديد البريد — انسخه من المتصفح.'
+    },
+    mobileCta: {
+      label: 'ابدأ محادثة تجارية',
+      action: 'ابدأ محادثة تجارية'
     },
     footer: {
-      description: 'استكشاف الفرص التجارية والربط بين الشركات.',
+      description: 'استكشاف فرص B2B والربط التجاري الأولي.',
       rights: 'جميع الحقوق محفوظة.'
     }
   }
 };
 
 const root = document.documentElement;
+const pageLanguage = root.dataset.pageLanguage === 'ar' ? 'ar' : 'en';
 const languageStatus = document.querySelector('#language-status');
 const menuToggle = document.querySelector('[data-menu-toggle]');
 const nav = document.querySelector('.nav');
+const copyFeedback = document.querySelector('[data-copy-feedback]');
 const meta = {
   description: document.querySelector('meta[name="description"]'),
   language: document.querySelector('meta[name="language"]'),
@@ -287,10 +355,11 @@ const meta = {
   ogLocale: document.querySelector('meta[property="og:locale"]'),
   ogUrl: document.querySelector('meta[property="og:url"]'),
   twitterTitle: document.querySelector('meta[name="twitter:title"]'),
-  twitterDescription: document.querySelector('meta[name="twitter:description"]')
+  twitterDescription: document.querySelector('meta[name="twitter:description"]'),
+  canonical: document.querySelector('link[rel="canonical"]')
 };
 
-let activeLanguage = root.lang === 'ar' ? 'ar' : 'en';
+let activeLanguage = root.lang === 'ar' ? 'ar' : pageLanguage;
 
 function getTranslation(language, key) {
   return key.split('.').reduce((value, segment) => value && value[segment], translations[language]);
@@ -298,6 +367,10 @@ function getTranslation(language, key) {
 
 function setMetaContent(element, value) {
   if (element && value) element.setAttribute('content', value);
+}
+
+function languageUrl(language) {
+  return language === 'ar' ? 'https://tolvano.com/ar/' : 'https://tolvano.com/';
 }
 
 function updateMenuToggleLabel() {
@@ -318,14 +391,11 @@ function setMenuState(isOpen) {
 function updateBrowserUrl(language) {
   try {
     const url = new URL(window.location.href);
-    if (language === 'ar') {
-      url.searchParams.set('lang', 'ar');
-    } else {
-      url.searchParams.delete('lang');
-    }
-    window.history.replaceState({ language }, '', `${url.pathname}${url.search}${url.hash}`);
+    const projectRoot = url.pathname.startsWith('/TOLVANO/') ? '/TOLVANO/' : '/';
+    const pathname = language === 'ar' ? `${projectRoot}ar/` : projectRoot;
+    window.history.replaceState({ language }, '', `${pathname}${url.hash}`);
   } catch (error) {
-    // A visual language change remains available even when history APIs are unavailable.
+    // The visual language switch remains available when history APIs are unavailable.
   }
 }
 
@@ -358,8 +428,12 @@ function applyLanguage(language, { announce = false, updateUrl = false } = {}) {
     if (subject && email) element.href = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
   });
 
-  document.querySelectorAll('[data-language-option]').forEach((button) => {
-    button.setAttribute('aria-pressed', String(button.dataset.languageOption === language));
+  document.querySelectorAll('[data-language-option]').forEach((link) => {
+    if (link.dataset.languageOption === language) {
+      link.setAttribute('aria-current', 'page');
+    } else {
+      link.removeAttribute('aria-current');
+    }
   });
 
   document.title = getTranslation(language, 'meta.title');
@@ -368,24 +442,26 @@ function applyLanguage(language, { announce = false, updateUrl = false } = {}) {
   setMetaContent(meta.ogTitle, getTranslation(language, 'meta.ogTitle'));
   setMetaContent(meta.ogDescription, getTranslation(language, 'meta.ogDescription'));
   setMetaContent(meta.ogLocale, getTranslation(language, 'meta.locale'));
-  setMetaContent(meta.ogUrl, language === 'ar' ? 'https://tolvano.com/?lang=ar' : 'https://tolvano.com/');
+  setMetaContent(meta.ogUrl, languageUrl(language));
   setMetaContent(meta.twitterTitle, getTranslation(language, 'meta.ogTitle'));
   setMetaContent(meta.twitterDescription, getTranslation(language, 'meta.ogDescription'));
+  if (meta.canonical) meta.canonical.setAttribute('href', languageUrl(language));
   updateMenuToggleLabel();
 
   try {
     window.localStorage.setItem('tolvano-language', language);
   } catch (error) {
-    // Storage is an enhancement; the language switch still works in restricted contexts.
+    // Storage is an enhancement; the switch still works in restricted contexts.
   }
 
   if (updateUrl) updateBrowserUrl(language);
   if (announce && languageStatus) languageStatus.textContent = getTranslation(language, 'meta.status');
 }
 
-document.querySelectorAll('[data-language-option]').forEach((button) => {
-  button.addEventListener('click', () => {
-    applyLanguage(button.dataset.languageOption, { announce: true, updateUrl: true });
+document.querySelectorAll('[data-language-option]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    applyLanguage(link.dataset.languageOption, { announce: true, updateUrl: true });
   });
 });
 
@@ -399,11 +475,44 @@ if (menuToggle && nav) {
   });
 }
 
+function selectEmailAddress() {
+  const email = document.querySelector('[data-email-address]');
+  if (!email || !window.getSelection || !document.createRange) return;
+  const range = document.createRange();
+  range.selectNodeContents(email);
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  selection.addRange(range);
+}
+
+async function copyEmailAddress(email) {
+  try {
+    if (typeof navigator !== 'undefined' && navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(email);
+      return true;
+    }
+  } catch (error) {
+    // A selectable address below is the explicit fallback.
+  }
+  selectEmailAddress();
+  return false;
+}
+
+document.querySelectorAll('[data-copy-email]').forEach((button) => {
+  button.addEventListener('click', async () => {
+    const copied = await copyEmailAddress(button.dataset.copyEmail);
+    if (copyFeedback) {
+      copyFeedback.textContent = getTranslation(activeLanguage, copied ? 'contact.copySuccess' : 'contact.copyFallback');
+    }
+  });
+});
+
 const year = document.querySelector('#year');
 if (year) year.textContent = new Date().getFullYear();
 
 const revealItems = document.querySelectorAll('.reveal');
 const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+root.classList.add('js');
 if (prefersReducedMotion || !('IntersectionObserver' in window)) {
   revealItems.forEach((item) => item.classList.add('visible'));
 } else {
